@@ -1,1 +1,2 @@
-This 
+This program uses an Actor-Critic method from Reinforcement Learning to stabilise a small rigid drop in the four-roll mill extensional flow (low Reynolds numbers). This is achieved by modulating the revolution rates of the cylinders according to a probability density function whose shape is improved over time via gradient methods. The meaning of each parameter used is explained in the inline comments. With enough training, our algorithm is able to precisely control the drop and keep it close to the stagnation point for as long as needed. 
+This is the code used in the paper M. Vona and E. Lauga (2021) "Stabilising viscous extensional flows using Reinforcement Learning".
