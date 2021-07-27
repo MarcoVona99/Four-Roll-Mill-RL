@@ -1,8 +1,8 @@
 DefOmega=[-1,1,1,-1]; % Default angular velocities
 WiggleRoom=0.7*[1,1,1,1]; % WiggleRoom(i) is the semi-width of DefOmega(i)'s wiggle room 
 dt=0.125* 0.20; % Time step
-d1=0.125* 0.04; % Delay between picture acquisition and speed correction
-d2=0.125* 0.04; % Time to reset the velocities. We must have recoverytime + delta <= dt
+d1=0.125* 0.04; % Delay between picture acquisition and speed correction. We call this t_1 in the paper
+d2=0.125* 0.04; % Time to reset the velocities. We call this t_2 in the paper
 lag=0.125*0.10; % This is what we call t_lag in the paper
 InitialState=[-0.03,0.02]; % Initial position
 
