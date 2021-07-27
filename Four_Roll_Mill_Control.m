@@ -3,7 +3,7 @@ WiggleRoom=0.7*[1,1,1,1]; % WiggleRoom(i) is the semi-width of DefOmega(i)'s wig
 dt=0.125* 0.20; % Time step
 d1=0.125* 0.04; % Delay between picture acquisition and speed correction
 d2=0.125* 0.04; % Time to reset the velocities. We must have recoverytime + delta <= dt
-lag=0.125*0.10;
+lag=0.125*0.10; % This is what we call t_lag in the paper
 InitialState=[-0.03,0.02]; % Initial position
 
 r=0.8; % Radius (same fol all cylinders)
