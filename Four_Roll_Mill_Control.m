@@ -34,6 +34,10 @@ W=@(w) w.^(0:ArraySize-1)'; % Feature vectors
 EpisodeLength=40; % Largest number of moves per episode
 NumberOfEpisodes=100; 
 
+% Add a section break here and only run the section below to estimate the policy
+
+S=0; % To compute average final distance
+
 for episode=1:NumberOfEpisodes
     episode
     State=InitialState; % Initial state
@@ -78,8 +82,10 @@ for episode=1:NumberOfEpisodes
         I=gamma*I;
         State=NextState;
     end
+    S=S+norm(State);
 end
-%%
+AverageDistance=S/NumberOfEpisodes
+
 function w=Action(a,b,T,L) % a,b column vectors
 T(1,1,1)=0;
 k=(1-L)*abs(T(1,1,1))-L*abs(T(1,1,1))+L*sum(abs(T),'all');
