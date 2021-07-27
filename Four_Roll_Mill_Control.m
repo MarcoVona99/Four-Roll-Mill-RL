@@ -34,7 +34,7 @@ W=@(w) w.^(0:ArraySize-1)'; % Feature vectors
 EpisodeLength=40; % Largest number of moves per episode
 NumberOfEpisodes=100; 
 
-% Add a section break here and only run the section below to estimate the policy
+% Add a section break here and run the section below as many times as needed to estimate the policy
 
 S=0; % To compute average final distance
 
