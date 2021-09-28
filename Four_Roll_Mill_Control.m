@@ -49,7 +49,7 @@ for episode=1:NumberOfEpisodes
         y=State(2);
        
         A=Action(a(x),b(y),T,L); % Take an action according to the current policy
- 
+        B=Action(a(x),b(y),T,L); % To estimate the momenta of the action
         
         NextState=State;
         h=dt/20;
@@ -77,7 +77,7 @@ for episode=1:NumberOfEpisodes
         
         delta=Rew+gamma*a(x1)'*D*b(y1)-a(x)'*D*b(y); % Update parameters via gradient ascent
         D=D+alphaD*I*delta*a(x)*b(y)';
-        T=T+alphaT*I*delta*a(x)*b(y)'.*permute(W(A),[3,2,1]);
+        T=T+alphaT*I*delta*a(x)*b(y)'.*(permute(W(A),[3,2,1])-permute(W(B),[3,2,1]));
         
         I=gamma*I;
         State=NextState;
